@@ -1,0 +1,132 @@
+{
+  "A1": {
+    "name": "Live Variable Analysis and Iterative Solver",
+    "files_to_submit": [
+      "src/main/java/pascal/taie/analysis/dataflow/analysis/LiveVariableAnalysis.java",
+      "src/main/java/pascal/taie/analysis/dataflow/solver/Solver.java",
+      "src/main/java/pascal/taie/analysis/dataflow/solver/IterativeSolver.java"
+    ],
+    "dependencies": []
+  },
+  "A2": {
+    "name": "Constant Propagation and Worklist Solver",
+    "files_to_submit": [
+      "src/main/java/pascal/taie/analysis/dataflow/analysis/constprop/ConstantPropagation.java",
+      "src/main/java/pascal/taie/analysis/dataflow/solver/Solver.java",
+      "src/main/java/pascal/taie/analysis/dataflow/solver/WorkListSolver.java"
+    ],
+    "dependencies": []
+  },
+  "A3": {
+    "name": "Dead Code Detection",
+    "files_to_submit": [
+      "src/main/java/pascal/taie/analysis/dataflow/analysis/DeadCodeDetection.java"
+    ],
+    "dependencies": [
+      {
+        "from": "A1",
+        "file": "src/main/java/pascal/taie/analysis/dataflow/analysis/LiveVariableAnalysis.java"
+      },
+      {
+        "from": "A2",
+        "file": "src/main/java/pascal/taie/analysis/dataflow/analysis/constprop/ConstantPropagation.java"
+      },
+      {
+        "from": "A2",
+        "file": "src/main/java/pascal/taie/analysis/dataflow/solver/Solver.java"
+      },
+      {
+        "from": "A2",
+        "file": "src/main/java/pascal/taie/analysis/dataflow/solver/WorkListSolver.java"
+      }
+    ]
+  },
+  "A4": {
+    "name": "Class Hierarchy Analysis and Interprocedural Constant Propagation",
+    "files_to_submit": [
+      "src/main/java/pascal/taie/analysis/graph/callgraph/CHABuilder.java",
+      "src/main/java/pascal/taie/analysis/dataflow/inter/InterConstantPropagation.java",
+      "src/main/java/pascal/taie/analysis/dataflow/inter/InterSolver.java"
+    ],
+    "dependencies": [
+      {
+        "from": "A2",
+        "file": "src/main/java/pascal/taie/analysis/dataflow/analysis/constprop/ConstantPropagation.java"
+      }
+    ]
+  },
+  "A5": {
+    "name": "Context-Insensitive Pointer Analysis",
+    "files_to_submit": [
+      "src/main/java/pascal/taie/analysis/pta/ci/Solver.java"
+    ],
+    "dependencies": []
+  },
+  "A6": {
+    "name": "Context-Sensitive Pointer Analysis",
+    "files_to_submit": [
+      "src/main/java/pascal/taie/analysis/pta/cs/Solver.java",
+      "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_1CallSelector.java",
+      "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_1ObjSelector.java",
+      "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_1TypeSelector.java",
+      "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_2CallSelector.java",
+      "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_2ObjSelector.java",
+      "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_2TypeSelector.java"
+    ],
+    "dependencies": []
+  },
+  "A7": {
+    "name": "Alias-Aware Interprocedural Constant Propagation",
+    "files_to_submit": [
+      "src/main/java/pascal/taie/analysis/dataflow/inter/InterConstantPropagation.java",
+      "src/main/java/pascal/taie/analysis/dataflow/inter/InterSolver.java"
+    ],
+    "dependencies": [
+      {
+        "from": "A2",
+        "file": "src/main/java/pascal/taie/analysis/dataflow/analysis/constprop/ConstantPropagation.java"
+      },
+      {
+        "from": "A6",
+        "file": "src/main/java/pascal/taie/analysis/pta/cs/Solver.java"
+      },
+      {
+        "from": "A6",
+        "file": "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_2ObjSelector.java"
+      }
+    ]
+  },
+  "A8": {
+    "name": "Taint Analysis",
+    "files_to_submit": [
+      "src/main/java/pascal/taie/analysis/pta/plugin/taint/TaintAnalysiss.java",
+      "src/main/java/pascal/taie/analysis/pta/cs/Solver.java"
+    ],
+    "dependencies": [
+      {
+        "from": "A6",
+        "file": "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_1CallSelector.java"
+      },
+      {
+        "from": "A6",
+        "file": "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_1ObjSelector.java"
+      },
+      {
+        "from": "A6",
+        "file": "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_1TypeSelector.java"
+      },
+      {
+        "from": "A6",
+        "file": "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_2CallSelector.java"
+      },
+      {
+        "from": "A6",
+        "file": "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_2ObjSelector.java"
+      },
+      {
+        "from": "A6",
+        "file": "src/main/java/pascal/taie/analysis/pta/core/cs/selector/_2TypeSelector.java"
+      }
+    ]
+  }
+}

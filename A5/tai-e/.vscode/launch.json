@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run Assignment (with libs)",
+      "request": "launch",
+      "mainClass": "pascal.taie.Assignment",
+      "classPaths": [
+        "${workspaceFolder}/build/classes/java/main",
+        "${workspaceFolder}/lib/tai-e-assignment.jar",
+        "${workspaceFolder}/../../lib/dependencies.jar"
+      ],
+      "args": "-cp src/test/resources/pta/cipta -m Example -a cipta",
+      "preLaunchTask": "gradle: classes"
+    }
+  ]
+}

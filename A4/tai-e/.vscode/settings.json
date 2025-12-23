@@ -1,0 +1,11 @@
+{
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.16.8-hotspot"
+    }
+  ],
+  "java.project.sourceCompatibility": "17",
+  "java.project.targetCompatibility": "17",
+  "java.debug.settings.onBuildFailureProceed": true
+}
